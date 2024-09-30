@@ -6,7 +6,6 @@ import { advocateData } from "../../../db/seed/advocates";
 export async function GET(req: NextApiRequest, res: NextApiResponse) {
   const params = new URLSearchParams(new URL(req.url ?? "").search);
   const searchTerm = params.get("searchTerm") ?? "";
-  console.log("searchTerm: ", searchTerm);
 
   const filteredAdvocates = advocateData.filter((advocate) => {
     return (
